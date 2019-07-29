@@ -22,21 +22,23 @@ export default class Celebrity extends Component {
       <div>
         <h1>Celebrities</h1>
         <div className="grid">
-          <table>
-            <tbody>
-              {this.state.celebrities.map(c => (
-                <tr key={c.id} onClick={() => this.handleClick(c.id)}>
-                  <td>
-                    <img
-                      src={"https://image.tmdb.org/t/p/w185" + c.profile_path}
-                      alt=""
-                    />
-                  </td>
-                  <td>{c.name}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="celebrities-list">
+            <table>
+              <tbody>
+                {this.state.celebrities.map(c => (
+                  <tr key={c.id} onClick={() => this.handleClick(c.id)}>
+                    <td>
+                      <img
+                        src={"https://image.tmdb.org/t/p/w185" + c.profile_path}
+                        alt=""
+                      />
+                    </td>
+                    <td>{c.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className="detail">
             {selectedContact && (
               <div>
